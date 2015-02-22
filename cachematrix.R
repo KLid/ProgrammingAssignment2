@@ -36,3 +36,8 @@ cacheSolve <- function(x, ...) {
     inv
 }
 
+##TEST
+# x = matrix(-2:1,2)
+# m = makeCacheMatrix(x)
+# m$get()
+# cacheSolve(m)
