@@ -48,3 +48,9 @@ cacheSolve <- function(x, ...) {
 #      [,1] [,2]
 # [1,] -0.5    0
 # [2,] -0.5    1
+
+# cacheSolve(m)
+# getting cached data.
+#      [,1] [,2]
+# [1,] -0.5    0
+# [2,] -0.5    1
