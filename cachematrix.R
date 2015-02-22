@@ -26,13 +26,16 @@ makeCacheMatrix <- function(mat = matrix()) {
 
 cacheSolve <- function(x, ...) {
     inv <- x$getInv()
-    if(!is.null(inv)) {
-        message("getting cached data.")
+    ##if inverse matrix already in cache (inv != null) then return the iverted matrix
+    if(!is.null(inv)) { 
+        message("getting cached data.") #Evidence message :-)
         return(inv)
     }
-    data <- x$get()
-    inv <- solve(data)
-    x$setInv(inv)
+    
+    ## we declared before inv as NULL in makeCacheMatrix(), so this is the case for the first run
+    data <- x$get() 
+    inv <- solve(data) #inverse the matrix
+    x$setInv(inv)      #save the inversed matrix into makeCacheMatrix(), so inv will for the next run not be NULL anymore!
     inv
 }
 
